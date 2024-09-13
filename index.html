@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Resume</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-image: url('rbg.webp');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    .editable {
+      border: 1px dashed #ccc;
+      padding: 5px;
+      cursor: pointer;
+      display: inline-block;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="resume-form">
+    <h2>Personal Information</h2>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <h2>Education</h2>
+    <div id="degree-section">
+      <div class="degree-entry">
+        <label for="degree">Degree:</label>
+        <select class="degree" name="degree" required>
+          <option value="">-- Select Degree --</option>
+          <option value="Matriculation">Matriculation</option>
+          <optgroup label="Intermediate (F.Sc)">
+            <option value="F.Sc Pre-Engineering">F.Sc Pre-Engineering</option>
+            <option value="F.Sc Pre-Medical">F.Sc Pre-Medical</option>
+            <option value="F.Sc Computer Science">F.Sc Computer Science</option>
+          </optgroup>
+          <optgroup label="Bachelors">
+            <option value="B.E">B.E</option>
+            <option value="BS">BS</option>
+            <option value="B.Tech">B.Tech</option>
+            <option value="Architecture">Architecture</option>
+          </optgroup>
+          <option value="Masters">Masters</option>
+          <option value="PhD">Ph.D</option>
+        </select>
+
+        <label for="institution">Institution:</label>
+        <input type="text" class="institution" name="institution" required>
+
+        <label for="completionYear">Completion Year:</label>
+        <input type="text" class="completionYear" name="completionYear" required>
+
+        <button type="button" class="remove-degree">Remove</button>
+      </div>
+    </div>
+    <button type="button" id="add-degree">Add Another Degree</button>
+
+    <h2>Work Experience</h2>
+    <label for="jobTitle">Job Title:</label>
+    <input type="text" id="jobTitle" name="jobTitle">
+
+    <label for="company">Company:</label>
+    <input type="text" id="company" name="company">
+
+    <label for="duration">Duration:</label>
+    <input type="text" id="duration" name="duration">
+
+    <h2>Skills</h2>
+    <label for="skills">Skills (comma-separated):</label>
+    <input type="text" id="skills" name="skills" required>
+
+    <button type="submit">Generate Resume</button>
+  </form>
+
+  <div id="resume-section"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>
